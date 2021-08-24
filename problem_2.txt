@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Multiply
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int t,flag=0;
+	    long result = 1;
+	    System.out.print("Enter test cases");
+	    t = sc.nextInt();
+	    
+	    while(t>0)
+	    {   t--;
+	        result = 1;
+	        int n;
+	        System.out.print("Enter no. of elements");
+	        n = sc.nextInt();
+	        if (n > 10 || n<1)
+	        {
+	         flag = 1;
+	         {System.out.println("Constraint for n not satisfied ::: 1<=n<=10, going for next test case ");}
+	         continue;
+	        }
+	        else{
+	        
+	        
+	        for(int i = 1 ;i<=n;i++)
+	        {
+	            long a;
+	            a=sc.nextLong();
+	            if(a > 15 || a<0)
+	            {
+	                flag = 2;
+	                break;
+	            }
+	            if (a==0)
+	            {
+	                result =0;
+	                break;
+	            }
+	            result = result * a;
+	        }
+	        
+	        }
+	        
+	        
+	        if(flag == 2)
+	        {System.out.println("Constraint for A[i] not satisfied ::: 0 <= A[i] <= 15 , Going for next test case");
+	            
+	        }
+	        else{
+	        System.out.println(result);
+	        }
+	        
+	    }
+	    if(flag == 1)
+	        {System.out.println("Constraint for n not satisfied ::: 1<=n<=10 ");}
+	    System.out.println("Exit ");
+
+    }
+}
